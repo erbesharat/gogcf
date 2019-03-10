@@ -12,14 +12,14 @@ import (
 	stripe "github.com/stripe/stripe-go"
 )
 
-// Params - charge http request parameters
+// Params - SubscribeCustomer query parameters
 type Params struct {
 	customerID string
 }
 
 var errorFormat = "{\"error\": {\"message\": \"%s\"}}"
 
-// SubscribeCustomer - Request: example.com/:customer_id
+// SubscribeCustomer - Request: example.com/?customer_id=test
 func SubscribeCustomer(w http.ResponseWriter, r *http.Request) {
 	stripe.Key = os.Getenv("STRIPE_KEY")
 

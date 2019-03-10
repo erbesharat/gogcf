@@ -1,4 +1,4 @@
-module github.com/erbesharat/gogcf/stripe/chargecustomer
+module github.com/erbesharat/gogcf/stripe/cancelsubscription
 
 require (
 	github.com/stretchr/testify v1.3.0 // indirect

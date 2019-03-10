@@ -11,7 +11,7 @@ import (
 	"github.com/stripe/stripe-go/customer"
 )
 
-// Params - charge http request parameters
+// Params - CreateCustomer query parameters
 type Params struct {
 	email       string
 	description string
@@ -20,7 +20,7 @@ type Params struct {
 
 var errorFormat = "{\"error\": {\"message\": \"%s\"}}"
 
-// CreateCustomer - Request: example.com/:email/:desc/:token
+// CreateCustomer - Request: example.com/?email=test@example.com&desc=testing&token=testing
 func CreateCustomer(w http.ResponseWriter, r *http.Request) {
 	stripe.Key = os.Getenv("STRIPE_KEY")
 	args := Params{

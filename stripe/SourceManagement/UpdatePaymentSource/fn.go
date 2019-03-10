@@ -12,7 +12,7 @@ import (
 	"github.com/stripe/stripe-go/paymentsource"
 )
 
-// Params - charge http request parameters
+// Params - UpdatePaymentSource query parameters
 type Params struct {
 	customerID string
 	oldToken   string
@@ -21,7 +21,7 @@ type Params struct {
 
 var errorFormat = "{\"error\": {\"message\": \"%s\"}}"
 
-// UpdatePaymentSource - Request: example.com/:customer_id/:old_token/:new_token
+// UpdatePaymentSource - Request: example.com/?customer_id=test&old_token=testing&new_token=newtesting
 func UpdatePaymentSource(w http.ResponseWriter, r *http.Request) {
 	stripe.Key = os.Getenv("STRIPE_KEY")
 

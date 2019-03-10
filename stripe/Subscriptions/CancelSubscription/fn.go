@@ -12,14 +12,14 @@ import (
 	stripe "github.com/stripe/stripe-go"
 )
 
-// Params - charge http request parameters
+// Params - CancelSubscription query parameters
 type Params struct {
 	subID string
 }
 
 var errorFormat = "{\"error\": {\"message\": \"%s\"}}"
 
-// CancelSubscription - Request: example.com/:sub_id
+// CancelSubscription - Request: example.com/?sub_id=testing
 func CancelSubscription(w http.ResponseWriter, r *http.Request) {
 	stripe.Key = os.Getenv("STRIPE_KEY")
 

@@ -12,32 +12,32 @@ import (
 	"github.com/stripe/stripe-go/charge"
 )
 
-// Params - charge http request parameters
+// Params - ChargeCustomer query parameters
 type Params struct {
-	customer string
-	source   string
-	currency string
-	amount   int64
+	customerID string
+	source     string
+	currency   string
+	amount     int64
 }
 
 var errorFormat = "{\"error\": {\"message\": \"%s\"}}"
 
-// ChargeCustomer - Request: example.com/charge/:customerid/:token/:amount
+// ChargeCustomer - Request: example.com/?customer_id=test&token=test&amount=1000
 func ChargeCustomer(w http.ResponseWriter, r *http.Request) {
 	stripe.Key = os.Getenv("STRIPE_KEY")
 	amount, _ := strconv.ParseInt(r.URL.Query().Get("amount"), 10, 64)
 	args := Params{
-		customer: r.URL.Query().Get("customerid"),
-		source:   r.URL.Query().Get("token"),
-		currency: "usd",
-		amount:   amount,
+		customerID: r.URL.Query().Get("customer_id"),
+		source:     r.URL.Query().Get("token"),
+		currency:   "usd",
+		amount:     amount,
 	}
 	sourceParams, _ := stripe.SourceParamsFor(args.source)
 	params := &stripe.ChargeParams{
 		Amount:   stripe.Int64(args.amount),
 		Currency: stripe.String(args.currency),
 		Source:   sourceParams,
-		Customer: stripe.String(args.customer),
+		Customer: stripe.String(args.customerID),
 	}
 	ch, err := charge.New(params)
 	if err != nil {
