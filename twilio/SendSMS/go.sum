@@ -1,0 +1,6 @@
+github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
+github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
+github.com/gorilla/schema v1.0.2 h1:sAgNfOcNYvdDSrzGHVy9nzCQahG+qmsg+nE8dK85QRA=
+github.com/gorilla/schema v1.0.2/go.mod h1:kgLaKoK1FELgZqMAVxx/5cbj0kT+57qxUrAlIO2eleU=
+github.com/sfreiberg/gotwilio v0.0.0-20181223013140-ccf5c3cb3e06 h1:E4C710zY1bmLjQ/zq5pzzIK+J7o6aZoy6h8uRYzp5rM=
+github.com/sfreiberg/gotwilio v0.0.0-20181223013140-ccf5c3cb3e06/go.mod h1:60PiR0SAnAcYSiwrXB6BaxeqHdXMf172toCosHfV+Yk=
